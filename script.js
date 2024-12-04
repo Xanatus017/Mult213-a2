@@ -12,6 +12,9 @@ function Header(props) {
 const TodoItem = (props) => {
     return (
         <tr>
+            <td>
+                <input type="checkbox" />
+            </td>
             <td>{props.task}</td>
             <td>{props.status ? "Completed" : "Pending"}</td>
         </tr>
@@ -31,6 +34,7 @@ const TodoList = (props) => {
     return (
         <table>
             <tr>
+                <th>Complete</th>
                 <th>Task</th>
                 <th>Status</th>
             </tr>
