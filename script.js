@@ -68,6 +68,7 @@ const Footer = (props) => {
     return (
         <div className="footer">
             <p>{props.message}</p>
+            <p>{props.defaultmessage}</p>
         </div>
     );
 }
@@ -85,7 +86,7 @@ function App() {
                 { id: 3, text: "Do laundry", completed: true }
             ]} />
             <Card title="My Card Title" subtitle="My Card Subtitle" content="This is the content of my card." image="https://example.com/my-image.jpg" />
-            <Footer message="Contact me at contact@mywebsite.com" />
+            <Footer message="Contact me at contact@mywebsite.com" defaultmessage="Copyright © 2023 My Website. All rights reserved." />
         </div>
     );
 }
