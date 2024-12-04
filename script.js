@@ -9,6 +9,15 @@ function Header(props) {
 }
 
 
+// Footer Component
+const Footer = (props) => {
+    return (
+        <div className="footer">
+            <p>{props.message}</p>
+        </div>
+    );
+}
+
 
 
 // App Component
@@ -16,7 +25,7 @@ function App() {
     return (
         <div>
             <Header title="Welcome to My Website!" message="Thanks for visiting my site." />
-
+            <Footer message="Contact me at contact@mywebsite.com" />
         </div>
     );
 }
