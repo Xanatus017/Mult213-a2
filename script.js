@@ -8,6 +8,37 @@ function Header(props) {
     );
 }
 
+// TodoItem Component
+const TodoItem = (props) => {
+    return (
+        <tr>
+            <td>{props.task}</td>
+            <td>{props.status ? "Completed" : "Pending"}</td>
+        </tr>
+    );
+}
+
+// TodoList Component
+const TodoList = (props) => {
+    // Create todo item array using map
+    let todos_array = props.todos.map(todo => (
+        <TodoItem
+            task={todo.text}
+            status={todo.completed}
+        />
+    ));
+
+    return (
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Status</th>
+            </tr>
+            {todos_array}
+        </table>
+    );
+}
+
 // Card Component
 const Card = (props) => {
     return (
@@ -36,6 +67,11 @@ function App() {
     return (
         <div>
             <Header title="Welcome to My Website!" message="Thanks for visiting my site." />
+            <TodoList todos={[
+                { id: 1, text: "Complete React assignment", completed: false },
+                { id: 2, text: "Study for math test", completed: false },
+                { id: 3, text: "Do laundry", completed: true }
+            ]} />
             <Card title="My Card Title" subtitle="My Card Subtitle" content="This is the content of my card." image="https://example.com/my-image.jpg" />
             <Footer message="Contact me at contact@mywebsite.com" />
         </div>
