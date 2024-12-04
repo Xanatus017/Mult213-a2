@@ -17,6 +17,9 @@ const TodoItem = (props) => {
             </td>
             <td>{props.task}</td>
             <td>{props.status ? "Completed" : "Pending"}</td>
+            <td>
+                <button>Delete</button> 
+            </td>
         </tr>
     );
 }
@@ -32,14 +35,19 @@ const TodoList = (props) => {
     ));
 
     return (
-        <table>
-            <tr>
-                <th>Complete</th>
-                <th>Task</th>
-                <th>Status</th>
-            </tr>
-            {todos_array}
-        </table>
+        <div>
+            <table>
+                <tr>
+                    <th>Complete</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                {todos_array}
+
+            </table>
+        </div>
+
     );
 }
 
